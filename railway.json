@@ -4,6 +4,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "cd Java-crud-ApiRest-master && ./mvnw clean package -DskipTests && java -jar target/apirest-0.0.1-SNAPSHOT.jar"
+    "startCommand": "PROJECT_DIR=$(find . -name pom.xml | head -1 | xargs dirname) && cd $PROJECT_DIR && chmod +x mvnw && ./mvnw clean package -DskipTests && java -jar target/apirest-0.0.1-SNAPSHOT.jar"
   }
 }
