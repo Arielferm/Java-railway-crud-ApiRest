@@ -1,9 +1,10 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "Java-crud-ApiRest-master/Dockerfile"
   },
   "deploy": {
-    "startCommand": "PROJECT_DIR=$(find . -name pom.xml | head -1 | xargs dirname) && cd $PROJECT_DIR && chmod +x mvnw && ./mvnw clean package -DskipTests && java -jar target/apirest-0.0.1-SNAPSHOT.jar"
+    "startCommand": "java -jar app.jar"
   }
 }
