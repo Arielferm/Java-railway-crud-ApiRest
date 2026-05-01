@@ -1,19 +1,13 @@
-FROM eclipse-temurin:21-jdk-alpine as build
-COPY . /app
+FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /app
-COPY target/*.jar app.jar
-
+COPY . .
 RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
-RUN mv -f target/*.jar app.jar
-FROM eclipse-temurin:21-jre
 
-ARG PORT
-ENV PORT=${PORT}
-
-COPY --from=build /app/app.jar .
-
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 RUN useradd -m runtime
 USER runtime
-
-ENTRYPOINT ["java","-Dserver.port=${PORT}","-jar","app.jar"]
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
