@@ -10,4 +10,4 @@ COPY --from=build /app/target/*.jar app.jar
 RUN adduser -D runtime
 USER runtime
 EXPOSE 8080
-ENTRYPOINT ["java", "-Xmx180m", "-Xms64m", "-XX:+UseSerialGC", "-XX:MaxMetaspaceSize=80m", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Xmx150m", "-Xms50m", "-XX:+UseSerialGC", "-XX:MaxMetaspaceSize=70m", "-XX:CompressedClassSpaceSize=32m", "-jar", "app.jar"]
