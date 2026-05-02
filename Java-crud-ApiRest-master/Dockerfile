@@ -1,6 +1,6 @@
 FROM eclipse-temurin:17-jdk-alpine AS build
 WORKDIR /app
-COPY . .
+COPY Java-crud-ApiRest-master/ .
 RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
