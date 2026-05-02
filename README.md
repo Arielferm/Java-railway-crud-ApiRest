@@ -33,7 +33,9 @@ json{
   "nombre": "Notebook Lenovo",
   "precio": 1500.00
 }
+
 Respuesta esperada
+
 json{
   "id": 1,
   "nombre": "Notebook Lenovo",
