@@ -9,4 +9,4 @@ COPY --from=build /app/target/*.jar app.jar
 RUN useradd -m runtime 
 USER runtime 
 EXPOSE 8080 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Xmx256m", "-Xms128m", "-jar", "app.jar"]
