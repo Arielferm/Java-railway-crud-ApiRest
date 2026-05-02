@@ -3,6 +3,7 @@ Java REST API – CRUD de Productos Tecnológicos
 🔗 https://java-railway-crud-apirest-production-8151.up.railway.app/productos 
 
 API REST desarrollada en Java con Spring Boot, enfocada en la gestión eficiente de productos tecnológicos mediante operaciones CRUD. La aplicación está desplegada en la nube (Railway) y utiliza PostgreSQL como base de datos relacional.
+IMPORTANTE: Si el enlace no funciona, por favor actualice la pagina!
 
 🔹 Características principales:
 
